@@ -1,4 +1,5 @@
 site_name: Modernfit Docs
+site_url: https://ygmodesto.com/modernfit
 theme:
   name: material
   palette:
