@@ -10,6 +10,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
 repo_url: https://github.com/ygModesto/modernfit
 repo_name: Modernfit
+edit_uri: ""
 extra:
   analytics:
     provider: google
