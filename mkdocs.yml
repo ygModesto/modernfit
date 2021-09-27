@@ -2,8 +2,20 @@ site_name: Modernfit Docs
 theme:
   name: material
   palette:
-    primary: pink
-    accent: cyan
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: pink
+      accent: cyan
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: pink
+      accent: cyan
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
