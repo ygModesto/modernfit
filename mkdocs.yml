@@ -20,6 +20,7 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.inlinehilite
+  - admonition
 repo_url: https://github.com/ygModesto/modernfit
 repo_name: Modernfit
 edit_uri: ""
