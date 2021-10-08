@@ -21,6 +21,10 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.inlinehilite
   - admonition
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
 repo_url: https://github.com/ygModesto/modernfit
 repo_name: Modernfit
 edit_uri: ""
