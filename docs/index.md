@@ -1,16 +1,16 @@
-## Introducción
+## Introduction
 
-Define tu interfaz y Modernfit la implementa por ti.
+Define your interface and Modernfit implements it for you.
 
- * En tiempo de compilación
- * Genera código fuente legible
- * Errores en tiempo de compilación, no esperes a ejecutar
- * Usa OkHttp, Volley, o uno definido por ti
- * Usa el converter que quieras, Jakson, Gson o uno definido por ti
+ * At compile time
+ * Generate readable source code
+ * Compile-time errors, don't wait to run
+ * Use OkHttp, Volley, or one defined by you
+ * Use the converter you want, Jakson, Gson or one defined by you
 
 
 
-=== "Sincrono"
+=== "Synchronous"
 
     ``` java
     @Modernfit(
@@ -89,7 +89,7 @@ UserModernfit userModernfit = UserModernfitImpl.builder().build();
 
 
 ## Request Method
-Los métodos de la interfaz tienen que estar anotados con `#!java @GET`, `#!java @POST`, `#!java @PUT`, `#!java @DELETE`, `#!java @OPTIONS` o `#!java @HEAD`. Esto indica qué tipo de petición HTTP son. Con esta anotación también se indica la url relativa.
+The methods of the interface must be annotated with `#!java @GET`, `#!java @POST`, `#!java @PUT`, `#!java @DELETE`, `#!java @OPTIONS` or `#!java @HEAD`. This indicates what type of HTTP request they are. With this annotation the relative url is also indicated.
 
 ``` java
     @GET("/users")
@@ -101,7 +101,7 @@ Los métodos de la interfaz tienen que estar anotados con `#!java @GET`, `#!java
 ```
 
 ## URL Manipulation
-La URL se puede modificar con variables entre `{ }`, cada variable será sustituida por el valor del parámetro del mismo nombre anotado con `#!java @Path`, se puede poner un nombre diferente de parámetro indicando a qué variable sustituye a través del `#!java @Path("variable")`
+The URL can be modified with variables between `{ }`, each variable will be replaced by the value of the parameter of the same name annotated with `#!java @Path`, you can put a different parameter name indicating which variable it replaces through the `#!java @Path("variable")`
 
 ``` java
 	@GET("/user/{id}")
@@ -112,8 +112,7 @@ La URL se puede modificar con variables entre `{ }`, cada variable será sustitu
 	User getUser(@Path int id);
 ```
 
-
-También se pueden utilizar Query parameters. Al igual que con `#!java @Path` se puede usar un nombre diferente al del parámetro con `#!java @Query("variable")`
+Query parameters can also be used. As with `#!java @Path` you can use a different name than the parameter with `#!java @Query("variable")`.
 
 ``` java
     @GET("/{enterprise}/users")
@@ -124,7 +123,7 @@ También se pueden utilizar Query parameters. Al igual que con `#!java @Path` se
     List<User> getUsersByEnterprise(@Path String enterprise, @Query String sort);
 ```
 
-O si lo prefieres también puedes pasar los Query paramenters como un Map con `#!java @QueryMap`
+Or if you prefer you can also pass the Query parameters as a Map with `#!java @QueryMap`
 
 
 ``` java
@@ -133,10 +132,10 @@ O si lo prefieres también puedes pasar los Query paramenters como un Map con `#
 ```
 
 ## Headers
-Los headers se pueden incluir a través de las anotaciones `#!java @Header`, `#!java @Headers` y `#!java @HeaderMap` o extendiendo la interfaz de `#!java ConfigurationInterface`.
+Headers can be included through annotations `#!java @Header`, `#!java @Headers` and `#!java @HeaderMap` or by extending the interface of `ConfigurationInterface`.
 
-#### Anotaciones
-`#!java @Header` por defecto usará el nombre de la variable como clave, si se desea cambiar se puede indicar en la anotación `#!java @Header("key")`
+#### Annotations
+`#!java @Header`  by default it will use the name of the variable as a key, if you want to change it you can indicate in the annotation `#!java @Header("key")`
 ``` java
   @Headers({"Compilation: 987654321", "DeviceType: Android"})
   @GET("/device")
@@ -155,18 +154,18 @@ Los headers se pueden incluir a través de las anotaciones `#!java @Header`, `#!
       @HeaderMap Map<String, String> headers);
 ```
 #### ConfigurationInterface
-Si extendemos la interfaz de ConfigurationInterfaz podremos llamar a los métodos para establecer y obtener las cabeceras definidas para todos los métodos de la interfaz.
+If we extend the interface of ConfigurationInterfaz we can call the methods to establish and obtain the headers defined for all the methods of the interface.
 
 - `#!java Map<String, String> getHeaders();`
 - `#!java void setHeaders(Map<String, String> headers);`
 
-## URL Dinamicamente
+## URL Dynamically
 
-Se puede cambiar la url base establecida con `#!java @Modernfit` mediante `#!java @Url` o haciendo que la interfaz extienda de `#!java ConfigurationInterface`.
+You can change the base url set with `#!java @Modernfit` using `#!java @Url` or by making the interface extend from `ConfigurationInterface`.
 
 #### @URL
 
-La url pasada por parámetro hará que se ignore la url base `"https://remotehost/api"`.
+The url passed by parameter will cause the base url to be ignored  `"https://remotehost/api"`.
 
 ``` java
 @Modernfit(value = "https://remotehost/api", converterFactory = JacksonConverterFactory.class)
@@ -180,7 +179,7 @@ public interface UrlEchoResponseRepository {
 
 #### ConfigurationInterface
 
-Al extender de ConfigurationInterface podremos llamar al método `#!java void setBaseUrl(String baseUrl);` para cambiar la url base.
+By extending ConfigurationInterface we can call the method `#!java void setBaseUrl(String baseUrl);` to change the base url.
 
 ``` java
 @Modernfit(value = "http://remotehost/api", converterFactory = JacksonConverterFactory.class)
@@ -192,9 +191,9 @@ public interface UrlEchoResponseRepository extends ConfigurationInterface {
 ```
 
 ## FormUrlEncoded
-Si se utiliza la anotación `#!java @FormUrlEncoded` la petición HTTP será de tipo `"application/x-www-form-urlencoded"`. Cada clave valor está definido por la anotación `#!java @Field`, la clave viene dada por el nombre de la variable o a través del campo de la anotacion `#!java @Field("key")`, el objeto provee el valor.
+If the annotation is used, the `#!java @FormUrlEncoded` HTTP request will be of type `"application/x-www-form-urlencoded"`. Each key value is defined by the annotation `#!java @Field`, the key is given by the name of the variable or through the annotation field `#!java @Field("key")`, the object provides the value.
 
-Los campos también se pueden proporcionar con un Map anotado con `#!java @FieldMap`
+Fields can also be provided with an annotated Map with `#!java @FieldMap`
 
 ``` java
 @FormUrlEncoded
@@ -207,10 +206,9 @@ User createUser(@FieldMap Map<String, String> user);
 ```
 
 ##Multipart
-Si se utiliza la anotación `#!java @Multipart` la petición HTTP será de tipo Multipart.
-Cada part se declara utilizando la anotación `#!java @Part`. 
+If the annotation is used, the `#!java @Multipart` HTTP request will be of type Multipart. Each part is declared using annotation `#!java @Part`.
 
-También se pueden incluir varios parts de una vez utilizando un Map y la anotación `#!java @PartMap`
+You can also include multiple parts at once using a Map and annotation  `#!java @PartMap`
 
 ``` java
 @Multipart
@@ -223,10 +221,9 @@ Collection<User> createUsers(@PartMap Map<String, User> users);
 
 ```
 
-## Cliente HTTP
+## HTTP Client
 
-Puedes utilizar los clientes ya definidos por Modernfit o si lo prefieres definir un [custom client http](#definir-custom-http-client).
-El cliente a usar se define en el campo client de la anotación `#!java @Modernfit`.
+You can use the clients already defined by Modernfit or if you prefer define a [custom client http](#define-custom-http-client) . The client to use is defined in the client field of the annotation `#!java @Modernfit`.
 
  - [ClientOkHttp.class](https://gitlab.com/ygModesto/modernfit/-/blob/develop/modernfit/src/main/java/com/ygmodesto/modernfit/services/ClientOkHttp.java) para usar [OkHttp](https://square.github.io/okhttp/)
  - [ClientVolley.class](https://gitlab.com/ygModesto/modernfit/-/blob/develop/android/volley/src/main/java/com/ygmodesto/modernfit/volley/ClientVolley.java) para usar [Volley](https://developer.android.com/training/volley) (Solo para Android).
@@ -234,9 +231,9 @@ El cliente a usar se define en el campo client de la anotación `#!java @Modernf
 
 #### ClientOkHttp.class
 
-Para las peticiones HTTP utiliza la librería [OkHttp](https://square.github.io/okhttp/). Esta libería necesita del objeto [OkHttpClient](https://github.com/square/okhttp/blob/master/okhttp/src/main/kotlin/okhttp3/OkHttpClient.kt) que si no se le proporcionar uno a Modernfit generará uno al construir la implementación de la interfaz.
+For HTTP requests it uses the [OkHttp](https://square.github.io/okhttp/) library. This library needs the [OkHttpClient](https://github.com/square/okhttp/blob/master/okhttp/src/main/kotlin/okhttp3/OkHttpClient.kt) object that if you don't provide one to Modernfit it will generate one when building the interface implementation.
 
-Si se desea aportar un objeto OkHttpClient debe hacerse a la hora de llamar al constructor de la implementación de la interfaz. Si suponemos que la interfaz se llama PongRepository.
+If you want to contribute an OkHttpClient object, it must be done when calling the constructor of the interface implementation. If we assume that the interface is called PongRepository.
 
 ``` java
 
@@ -249,16 +246,15 @@ PongRepositoryImpl.builder()
 
 #### ClientVolley.class
 
-Para las peticiones HTTP utiliza la librería [Volley](https://developer.android.com/training/volley). Esta libería necesita del objeto [RequestQueue](https://github.com/google/volley/blob/master/core/src/main/java/com/android/volley/RequestQueue.java) que si no se le proporcionar uno a Modernfit generará uno al construir la implementación de la interfaz.
+For HTTP requests it uses the [Volley](https://developer.android.com/training/volley) library. This library needs the [RequestQueue](https://github.com/google/volley/blob/master/core/src/main/java/com/android/volley/RequestQueue.java) object that if you don't provide one to Modernfit it will generate one when building the interface implementation.
 
 !!! note
-    Para usar Volley si no se le pasa el objeto RequestQueue debe pasarse el Context
-    a través de la siguiente llamada 
+    To use Volley if the RequestQueue object is not passed, the Context must be passed through the following call:
 
     `#!java AndroidModernfitContext.setContext(context);`
 
 
-Si se desea aportar un objeto RequestQueue debe hacerse a la hora de llamar al constructor de la implementación de la interfaz. Si suponemos que la interfaz se llama PongRepository. 
+If you want to provide a RequestQueue object, it must be done when calling the interface implementation constructor. If we assume that the interface is called PongRepository.
 
 ``` java
 
@@ -269,13 +265,13 @@ PongRepositoryImpl.builder()
 
 ```
 
-## Definir Custom HTTP Client
-Para definir un Cliente HTTP para usar con Modernfit debemos crear una clase que cumpla con 2 requisitos:
+## Define Custom HTTP Client
+To define an HTTP Client to use with Modernfit we must create a class that meets 2 requirements:
 
-- Debe contar con método estatico `#!java public static ClientCustom create();`
-- Debe implementar la interfaz HttpClient
+- It must have a static method `#!java public static ClientCustom create();`
+- You must implement the `HttpClient` interface
 
-Una vez tengamos nuestro ClientCustom ya podremos usarlo en la anotación `#!java @Modernfit`.
+Once we have our ClientCustom we can use it in the annotation `#!java @Modernfit`.
 ``` java
 @Modernfit(client = ClientCustom.class)
 public interface PongRepository {
@@ -284,13 +280,13 @@ public interface PongRepository {
 
 
 
-A continuación se deja el esqueleto de un ejemplo
+Here is the skeleton of an example:
 ``` java
 public class ClientCustom implements HttpClient {
 
 
   public static ClientCustom create() {
-    // Creacion de todo lo necesario
+    //Creation of everything you need
   }
 
 
@@ -298,14 +294,14 @@ public class ClientCustom implements HttpClient {
   public ResponseContent callMethod(RequestInfo requestInfo, DiscreteBody body)
       throws ModernfitException {
 
-    //código para la petición http
+    //code for http request 
   }
 
   @Override
   public <T> void callMethod(RequestInfo requestInfo, DiscreteBody body,
       ResponseCallback<T> callback) throws ModernfitException {
 
-    //código para la petición http usando callback
+    //code for http request using callback
   }
 
   @Override
@@ -313,60 +309,60 @@ public class ClientCustom implements HttpClient {
       throws ModernfitException {
 
 
-    //código para la petición http multipart
+    //code for http multipart request 
   }
 
   @Override
   public <T> void callMethod(RequestInfo requestInfo, MultipartBody body,
       ResponseCallback<T> callback) throws ModernfitException {
 
-    //código para la petición http multipart usando callback
+    //code for http multipart request using callback
   }
 }
 ```
 
-## Definir Custom Converter
+## Define Custom Converter
 
-Para definir un Converter para usar con Modernfit debemos crear una clase que cumpla con 2 requisitos:
+To define a Converter to use with Modernfit we must create a class that meets 2 requirements:
 
-- Debe contar con método estatico `#!java public static CustomConverterFactory create();`
-- Debe implementar la interfaz Converter.Factory
+- It must have a static method `#!java public static CustomConverterFactory create();`
+- You must implement the `Converter.Factory` interface
 
-Converter.Factory obliga a implementar 3 métodos. Estos métodos deben devolver un Converter.
+Converter.Factory forces to implement 3 methods. These methods should return a Converter.
 
-- `#!java public <T> Converter<T, BodyContent> getRequestConverter(T zombie, CustomType<T> customType);` Este Coverter se usará para convertir el Objeto anotado con @Body de tipo T.
-- `#!java public <T> Converter<ResponseContent, T> getResponseConverter(T zombie, CustomType<T> customType);` Este Converter se usará para convertir la respuesta de la petición HTTP al objeto a devolver.
-- `#!java public <T> Converter<T, String> getUrlConverter(T zombie, CustomType<T> customType);` Este Converter se usará para convertir los parámetros anotados con `#!java @Path`, `#!java @Query` y `#!java @QueryMap` para convertirlos a URL.
+- `#!java public <T> Converter<T, BodyContent> getRequestConverter(T zombie, CustomType<T> customType);` This Coverter will be used to convert the Object annotated with `#!java @Body` of type T.
+- `#!java public <T> Converter<ResponseContent, T> getResponseConverter(T zombie, CustomType<T> customType);` This Converter will be used to convert the response of the HTTP request to the object to be returned.
+- `#!java public <T> Converter<T, String> getUrlConverter(T zombie, CustomType<T> customType);` This Converter will be used to convert the parameters noted with `#!java @Path`, `#!java @Query` and `#!java @QueryMap` to convert them to URL.
 
 
-A continuación se deja el esqueleto de un ejemplo
+Here is the skeleton of an example:
 ```java
 public class CustomConverterFactory extends BaseConverterFactory implements Converter.Factory {
 
   public static CustomConverterFactory create(){
-    // Creacion de todo lo necesario
+    //Creation of everything you need
   }
   
   @Override
   public <T> Converter<T, BodyContent> getRequestConverter(T zombie, CustomType<T> customType) {
-    //código para crear el converter
+    //code to create the converter
   }
 
   @Override
   public <T> Converter<ResponseContent, T> getResponseConverter(T zombie,
       CustomType<T> customType) {
-    //código para crear el converter
+    //code to create the converter
   }
 
   @Override
   public <T> Converter<T, String> getUrlConverter(T zombie, CustomType<T> customType) {
-    //código para crear el converter
+    //code to create the converter
   }
 
 }
 ```
-El parámetro `CustomType<T>` customType contiene toda la información necesaria que necesitan las principales librerias de Converters.
-El parámetro `T zombie` ha sido agregado para poder hacer Method Overloading, este parámetro solo recibirá un objeto de ese tipo seteado a null. Gracias al Method Overloading podemos generar converters específicos para ciertos tipos de datos, por ejemplo, la clase BaseConverterFactory de la que extiende el ejemplo anterior se encarga de generar todos los Converters para los casos en los que la respuesta o la petición sean scalares (enteros, flotantes, un string sin formato en vez de los JSON que espera Jackson o Gson por ejemplo).
+
+The `CustomType<T> customType` parameter contains all the necessary information that the main Converters libraries need. The parameter `T zombie` has been added to be able to do Method Overloading, this parameter will only receive an object of that type set to null. Thanks to Method Overloading we can generate specific converters for certain types of data, for example, the BaseConverterFactory class from which the previous example extends is responsible for generating all Converters for cases in which the response or request are scalars (integers, floats, a raw string instead of the JSON expected by Jackson or Gson for example).
 
 
 ##Usage
@@ -404,7 +400,7 @@ El parámetro `T zombie` ha sido agregado para poder hacer Method Overloading, e
 		</plugins>
 	</build>
 ```
-Recuerda agregar las dependencias del cliente y el converter que vayas a utilizar, si por ejemplo vas a usar OkHttp y Gson necesitas agregar las dependencias propias de la librería
+Remember to add the dependencies of the client and the converter that you are going to use, if for example you are going to use OkHttp and Gson you need to add the dependencies of the library.
 
 ``` xml
       <dependency>
@@ -428,7 +424,7 @@ implementation 'com.ygmodesto.modernfit:modernfit:1.0.0-SNAPSHOT'
 annotationProcessor 'com.ygmodesto.modernfit:modernfit-compiler:1.0.0-SNAPSHOT'
 ```
 
-Recuerda agregar las dependencias del cliente y el converter que vayas a utilizar, si por ejemplo vas a usar OkHttp y Gson necesitas agregar las dependencias propias de la librería
+Remember to add the dependencies of the client and the converter that you are going to use, if for example you are going to use OkHttp and Gson you need to add the dependencies of the library.
 
 ``` gradle
 implementation 'com.squareup.okhttp3:okhttp:VERSION'

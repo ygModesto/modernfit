@@ -1,10 +1,10 @@
 ## Android Studio
-Nothing to do.
+No need to do anything 
 
 ## Eclipse
-Recomiendo que instales [m2e-apt](https://marketplace.eclipse.org/content/m2e-apt) ya que aplica el annotation processing de forma automática.
+I recommend that you install [m2e-apt](https://marketplace.eclipse.org/content/m2e-apt) as it applies annotation processing automatically.
 
-Para indicarle al plugin que se ejecute lo más fácil es agregar la siguiente propiedad al pom.xml de tu proyecto
+To tell the plugin to run, the easiest way is to add the following property to your project's pom.xml
 
 ``` xml
 	<properties>
@@ -13,7 +13,7 @@ Para indicarle al plugin que se ejecute lo más fácil es agregar la siguiente p
 ```
 
 ## IntelliJ
-Para maven y gradle ya obtiene la configuración automaticamente.
+For maven and gradle you already get the configuration automatically.
 
 ## Netbeans
-Si usas maven no hay nada más que hacer.
+If you use maven there is nothing else to do.
