@@ -1,0 +1,54 @@
+/*
+ * Copyright 2020 Yago Modesto González Diéguez
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.ygmodesto.modernfit.processor.repository;
+
+import com.ygmodesto.modernfit.annotations.Field;
+import com.ygmodesto.modernfit.annotations.FieldMap;
+import com.ygmodesto.modernfit.annotations.FormUrlEncoded;
+import com.ygmodesto.modernfit.annotations.GET;
+import com.ygmodesto.modernfit.annotations.Modernfit;
+import com.ygmodesto.modernfit.annotations.POST;
+import com.ygmodesto.modernfit.annotations.PUT;
+import com.ygmodesto.modernfit.annotations.Path;
+import com.ygmodesto.modernfit.converters.JacksonConverterFactory;
+import com.ygmodesto.modernfit.processor.server.User;
+import java.util.Collection;
+import java.util.Map;
+
+@Modernfit(value = "http://localhost:8080/api", converterFactory = JacksonConverterFactory.class)
+public interface FormUrlEncodedRepository {
+
+  @FormUrlEncoded
+  @GET("/user/{id}")
+  User getUser(@Path Long id);
+
+  @FormUrlEncoded
+  @POST("/user/create")
+  User createUser(@Field String name, @Field String login);
+
+  @FormUrlEncoded
+  @POST("/user/create")
+  User createUser(@FieldMap Map<String, String> user);
+
+  @FormUrlEncoded
+  @PUT("/user/update/{id}")
+  User updateUser(@Path Long id, @Field String name, @Field String login);
+
+  @FormUrlEncoded
+  @GET("/user/users")
+  Collection<User> getUserAll();
+}
