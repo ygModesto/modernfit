@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ygmodesto.modernfit</groupId>
+	<artifactId>parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>modernfit-parent</name>
+	<description>A compile-time type-safe HTTP client for Android and Java.</description>
+	<url>https://github.com/ygModesto/modernfit</url>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Yago Modesto González Diéguez</name>
+			<id>ygModesto</id>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/ygmodesto/modernfit.git</connection>
+		<developerConnection>scm:git:ssh://github.com:ygmodesto/modernfit.git</developerConnection>
+		<url>http://github.com/ygmodesto/modernfit/tree/main</url>
+	</scm>
+
+	<modules>
+		<module>modernfit</module>
+		<module>modernfit-compiler</module>
+		<module>modernfit-sample</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+
+		<modernfit.version>1.0.0-SNAPSHOT</modernfit.version>
+		<auto-service.version>1.0</auto-service.version>
+		<javapoet.version>1.13.0</javapoet.version>
+		<okhttp.version>3.14.9</okhttp.version>
+		<jackson.version>2.11.4</jackson.version>
+		<gson.version>2.8.6</gson.version>
+		<rxjava2.version>2.2.20</rxjava2.version>
+		<rxjava3.version>3.0.9</rxjava3.version>
+		<google.compile-testing.version>0.19</google.compile-testing.version>
+		<truth.version>1.1.3</truth.version>
+		<spring-boot.version>2.4.2</spring-boot.version>
+		<checkstyle.version>9.0.1</checkstyle.version>
+	</properties>
+
+
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>com.ygmodesto.modernfit</groupId>
+				<artifactId>modernfit</artifactId>
+				<version>${modernfit.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.ygmodesto.modernfit</groupId>
+				<artifactId>modernfit-compiler</artifactId>
+				<version>${modernfit.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.auto.service</groupId>
+				<artifactId>auto-service</artifactId>
+				<version>${auto-service.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.auto.service</groupId>
+				<artifactId>auto-service-annotations</artifactId>
+				<version>${auto-service.version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.squareup</groupId>
+				<artifactId>javapoet</artifactId>
+				<version>${javapoet.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.squareup.okhttp3</groupId>
+				<artifactId>okhttp</artifactId>
+				<version>${okhttp.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>${gson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.reactivex.rxjava2</groupId>
+				<artifactId>rxjava</artifactId>
+				<version>${rxjava2.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.reactivex.rxjava3</groupId>
+				<artifactId>rxjava</artifactId>
+				<version>${rxjava3.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.testing.compile</groupId>
+				<artifactId>compile-testing</artifactId>
+				<version>${google.compile-testing.version}</version>
+			</dependency>
+
+			<dependency>
+				<!-- Import dependency management from Spring Boot -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>3.2.1</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.2.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>3.2.0</version>
+					<executions>
+						<execution>
+							<id>attach-javadocs</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>com.github.spotbugs</groupId>
+					<artifactId>spotbugs-maven-plugin</artifactId>
+					<version>4.2.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-checkstyle-plugin</artifactId>
+					<version>3.1.2</version>
+					<dependencies>
+						<dependency>
+							<groupId>com.puppycrawl.tools</groupId>
+							<artifactId>checkstyle</artifactId>
+							<version>${checkstyle.version}</version>
+						</dependency>
+					</dependencies>
+					<configuration>
+						<configLocation>google_checks.xml</configLocation>
+						<suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
+						<encoding>UTF-8</encoding>
+						<consoleOutput>true</consoleOutput>
+						<failsOnError>true</failsOnError>
+						<failOnViolation>true</failOnViolation>
+						<linkXRef>false</linkXRef>
+						<violationSeverity>warning</violationSeverity>
+					</configuration>
+					<executions>
+						<execution>
+							<id>validate</id>
+							<phase>validate</phase>
+							<goals>
+								<goal>check</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
+
+</project>
