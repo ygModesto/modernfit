@@ -225,8 +225,8 @@ Collection<User> createUsers(@PartMap Map<String, User> users);
 
 You can use the clients already defined by Modernfit or if you prefer define a [custom client http](#define-custom-http-client) . The client to use is defined in the client field of the annotation `#!java @Modernfit`.
 
- - [ClientOkHttp.class](https://gitlab.com/ygModesto/modernfit/-/blob/develop/modernfit/src/main/java/com/ygmodesto/modernfit/services/ClientOkHttp.java) para usar [OkHttp](https://square.github.io/okhttp/)
- - [ClientVolley.class](https://gitlab.com/ygModesto/modernfit/-/blob/develop/android/volley/src/main/java/com/ygmodesto/modernfit/volley/ClientVolley.java) para usar [Volley](https://developer.android.com/training/volley) (Solo para Android).
+ - [ClientOkHttp.class](https://github.com/ygModesto/modernfit/blob/main/modernfit/src/main/java/com/ygmodesto/modernfit/services/ClientOkHttp.java) to use [OkHttp](https://square.github.io/okhttp/)
+ - [ClientVolley.class](https://github.com/ygModesto/modernfit/blob/main/android/volley/src/main/java/com/ygmodesto/modernfit/volley/ClientVolley.java) to use [Volley](https://developer.android.com/training/volley) (Solo para Android).
 
 
 #### ClientOkHttp.class
