@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ModernfitAndroid</string>
+    <string name="bodySendTextViewLabel">Body Send:</string>
+    <string name="responseTextViewLabel">Reponse:</string>
+</resources>
