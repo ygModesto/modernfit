@@ -225,13 +225,13 @@ Collection<User> createUsers(@PartMap Map<String, User> users);
 
 You can use the clients already defined by Modernfit or if you prefer define a [custom client http](#define-custom-http-client) . The client to use is defined in the client field of the annotation `#!java @Modernfit`.
 
- - [ClientOkHttp.class](https://github.com/ygModesto/modernfit/blob/main/modernfit/src/main/java/com/ygmodesto/modernfit/services/ClientOkHttp.java) to use [OkHttp](https://square.github.io/okhttp/)
- - [ClientVolley.class](https://github.com/ygModesto/modernfit/blob/main/android/volley/src/main/java/com/ygmodesto/modernfit/volley/ClientVolley.java) to use [Volley](https://developer.android.com/training/volley) (Solo para Android).
+ - [ClientOkHttp.class](https://github.com/ygModesto/modernfit/blob/main/modernfit/src/main/java/com/ygmodesto/modernfit/services/ClientOkHttp.java){target=_blank} to use [OkHttp](https://square.github.io/okhttp/){target=_blank}
+ - [ClientVolley.class](https://github.com/ygModesto/modernfit/blob/main/android/volley/src/main/java/com/ygmodesto/modernfit/volley/ClientVolley.java){target=_blank} to use [Volley](https://developer.android.com/training/volley){target=_blank} (Only for Android).
 
 
 #### ClientOkHttp.class
 
-For HTTP requests it uses the [OkHttp](https://square.github.io/okhttp/) library. This library needs the [OkHttpClient](https://github.com/square/okhttp/blob/master/okhttp/src/main/kotlin/okhttp3/OkHttpClient.kt) object that if you don't provide one to Modernfit it will generate one when building the interface implementation.
+For HTTP requests it uses the [OkHttp](https://square.github.io/okhttp/){target=_blank} library. This library needs the [OkHttpClient](https://github.com/square/okhttp/blob/master/okhttp/src/main/kotlin/okhttp3/OkHttpClient.kt){target=_blank} object that if you don't provide one to Modernfit it will generate one when building the interface implementation.
 
 If you want to contribute an OkHttpClient object, it must be done when calling the constructor of the interface implementation. If we assume that the interface is called PongRepository.
 
@@ -246,7 +246,7 @@ PongRepositoryImpl.builder()
 
 #### ClientVolley.class
 
-For HTTP requests it uses the [Volley](https://developer.android.com/training/volley) library. This library needs the [RequestQueue](https://github.com/google/volley/blob/master/core/src/main/java/com/android/volley/RequestQueue.java) object that if you don't provide one to Modernfit it will generate one when building the interface implementation.
+For HTTP requests it uses the [Volley](https://developer.android.com/training/volley){target=_blank} library. This library needs the [RequestQueue](https://github.com/google/volley/blob/master/core/src/main/java/com/android/volley/RequestQueue.java){target=_blank} object that if you don't provide one to Modernfit it will generate one when building the interface implementation.
 
 !!! note
     To use Volley if the RequestQueue object is not passed, the Context must be passed through the following call:
