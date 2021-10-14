@@ -34,7 +34,7 @@
 
 	<modules>
 		<module>modernfit</module>
-		<module>modernfit-compiler</module>
+		<module>modernfit-processor</module>
 		<module>modernfit-sample</module>
 	</modules>
 

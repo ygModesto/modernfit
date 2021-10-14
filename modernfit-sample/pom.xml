@@ -59,7 +59,7 @@
 					<annotationProcessorPaths>
 						<path>
 							<groupId>com.ygmodesto.modernfit</groupId>
-							<artifactId>modernfit-compiler</artifactId>
+							<artifactId>modernfit-processor</artifactId>
 							<version>${modernfit.version}</version>
 						</path>
 					</annotationProcessorPaths>
