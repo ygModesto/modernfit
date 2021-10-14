@@ -5,12 +5,13 @@
 	<parent>
 		<groupId>com.ygmodesto.modernfit</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
 	<artifactId>modernfit-sample</artifactId>
 
 	<properties>
 		<m2e.apt.activation>jdt_apt</m2e.apt.activation>
+		<maven.deploy.skip>true</maven.deploy.skip>
 	</properties>
 
 	<dependencies>
