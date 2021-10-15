@@ -190,6 +190,49 @@ public interface UrlEchoResponseRepository extends ConfigurationInterface {
 }
 ```
 
+## HttpInfo
+
+You can get information from the HTTP response with the HttpInfo or HttpResponseCallback object in case of using callbacks.
+Lets get the `code`, `headers` and `body`.
+
+=== "Synchronous"
+
+    ``` java
+    @Modernfit(
+      value = "https://remotehost/api", 
+      converterFactory = JacksonConverterFactory.class)
+    public interface SynchronousProductModernfit {
+  
+      @GET("/product/{barcode}")
+      HttpInfo<Product> getHttpInfoAndProduct(@Path Long barcode);
+    }
+    ```
+=== "Callback"
+
+    ``` java
+    @Modernfit(
+      value = "https://remotehost/api", 
+      converterFactory = JacksonConverterFactory.class)
+    public interface AsyncProductModernfit {
+  
+      @GET("/product/{barcode}")
+      void getHttpInfoAndProduct(@Path Long barcode, HttpResponseCallback<Product> callback);
+    }
+    ```
+=== "RxJava"
+
+    ``` java
+    @Modernfit(
+      value = "https://remotehost/api", 
+      converterFactory = JacksonConverterFactory.class)
+    public interface RxJava3ProductModernfit {
+  
+      @GET("/product/{barcode}")
+      Observable<HttpInfo<Product>> getHttpInfoAndProduct(@Path Long barcode);
+    }
+    ```
+
+
 ## FormUrlEncoded
 If the annotation is used, the `#!java @FormUrlEncoded` HTTP request will be of type `"application/x-www-form-urlencoded"`. Each key value is defined by the annotation `#!java @Field`, the key is given by the name of the variable or through the annotation field `#!java @Field("key")`, the object provides the value.
 
@@ -264,6 +307,13 @@ PongRepositoryImpl.builder()
                 .build();
 
 ```
+
+To use volley it is necessary to add the dependency with the Modernfit Volley module.
+
+``` groovy
+implementation 'com.ygmodesto.modernfit:volley:1.0.0'
+```
+
 
 ## Define Custom HTTP Client
 To define an HTTP Client to use with Modernfit we must create a class that meets 2 requirements:
@@ -366,67 +416,69 @@ The `CustomType<T> customType` parameter contains all the necessary information 
 
 
 ##Usage
-### maven
-``` xml
-    <properties>
-		<java.version>1.8</java.version> <!-- depending on your project -->
-		<modernfit.version>1.0.0-SNAPSHOT</modernfit.version>
-	</properties>
-    ...
-    <dependency>
-	    <groupId>com.ygmodesto.modernfit</groupId>
-		<artifactId>modernfit</artifactId>
-        <version>${modernfit.version}</version>
-	</dependency>
-    ...
-    <build>
-	    <plugins>
-		    <plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version> <!-- depending on your project -->
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-					<annotationProcessorPaths>
-						<path>
-							<groupId>com.ygmodesto.modernfit</groupId>
-							<artifactId>modernfit-compiler</artifactId>
-							<version>${modernfit.version}</version>
-						</path>
-					</annotationProcessorPaths>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-```
-Remember to add the dependencies of the client and the converter that you are going to use, if for example you are going to use OkHttp and Gson you need to add the dependencies of the library.
 
-``` xml
+=== "gradle"
+
+    ``` groovy
+    implementation 'com.ygmodesto.modernfit:modernfit:1.0.0'
+    //implementation 'com.ygmodesto.modernfit:volley:1.0.0' if you use volley as client
+    annotationProcessor 'com.ygmodesto.modernfit:modernfit-compiler:1.0.0'
+    ```
+
+    Remember to add the dependencies of the client and the converter that you are going to use, if for example you are going to use OkHttp and Gson you need to add the dependencies of the library.
+
+    ``` groovy
+    implementation 'com.squareup.okhttp3:okhttp:VERSION'
+    annotationProcessor 'com.google.code.gson:gson:VERSION'
+    ```
+
+=== "maven"
+
+    ``` xml
+      <properties>
+        <java.version>1.8</java.version> <!-- depending on your project -->
+        <modernfit.version>1.0.0</modernfit.version>
+      </properties>
+        ...
       <dependency>
-				<groupId>com.squareup.okhttp3</groupId>
-				<artifactId>okhttp</artifactId>
-				<version>${okhttp.version}</version>
-			</dependency>
+        <groupId>com.ygmodesto.modernfit</groupId>
+        <artifactId>modernfit</artifactId>
+        <version>${modernfit.version}</version>
+      </dependency>
+      ...
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version> <!-- depending on your project -->
+            <configuration>
+              <source>${java.version}</source>
+              <target>${java.version}</target>
+              <annotationProcessorPaths>
+                <path>
+                  <groupId>com.ygmodesto.modernfit</groupId>
+                  <artifactId>modernfit-processor</artifactId>
+                  <version>${modernfit.version}</version>
+                </path>
+              </annotationProcessorPaths>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    ```
+    Remember to add the dependencies of the client and the converter that you are going to use, if for example you are going to use OkHttp and Gson you need to add the dependencies of the library.
 
-			<dependency>
-				<groupId>com.google.code.gson</groupId>
-				<artifactId>gson</artifactId>
-				<version>${gson.version}</version>
-			</dependency>
+    ``` xml
+      <dependency>
+        <groupId>com.squareup.okhttp3</groupId>
+        <artifactId>okhttp</artifactId>
+        <version>${okhttp.version}</version>
+      </dependency>
 
-```
-
-### gradle
-
-``` gradle
-implementation 'com.ygmodesto.modernfit:modernfit:1.0.0-SNAPSHOT'
-annotationProcessor 'com.ygmodesto.modernfit:modernfit-compiler:1.0.0-SNAPSHOT'
-```
-
-Remember to add the dependencies of the client and the converter that you are going to use, if for example you are going to use OkHttp and Gson you need to add the dependencies of the library.
-
-``` gradle
-implementation 'com.squareup.okhttp3:okhttp:VERSION'
-annotationProcessor 'com.google.code.gson:gson:VERSION'
-```
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>${gson.version}</version>
+      </dependency>
+    ```
