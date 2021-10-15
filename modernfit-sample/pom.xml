@@ -9,6 +9,9 @@
 	</parent>
 	<artifactId>modernfit-sample</artifactId>
 
+	<name>Modernfit Sample</name>
+	<description>An example of use Modernfit</description>
+
 	<properties>
 		<m2e.apt.activation>jdt_apt</m2e.apt.activation>
 		<maven.deploy.skip>true</maven.deploy.skip>

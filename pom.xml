@@ -8,7 +8,7 @@
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
-	<name>modernfit-parent</name>
+	<name>Modernfit Parent</name>
 	<description>A compile-time type-safe HTTP client for Android and Java.</description>
 	<url>https://github.com/ygModesto/modernfit</url>
 
@@ -43,7 +43,7 @@
 		<java.version>1.8</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<maven.deploy.skip>true</maven.deploy.skip>
+		<maven.deploy.skip>false</maven.deploy.skip>
 
 		<modernfit.version>1.0.0</modernfit.version>
 		<auto-service.version>1.0</auto-service.version>
@@ -242,5 +242,20 @@
 		</pluginManagement>
 
 	</build>
+
+
+	<profiles>
+		<profile>
+			<id>release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 </project>

@@ -41,14 +41,15 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation project(':volley')
-    implementation 'com.ygmodesto.modernfit:modernfit:1.0.0-SNAPSHOT'
+    //implementation project(':volley')
+    implementation 'com.ygmodesto.modernfit:volley:1.0.0'
+    implementation 'com.ygmodesto.modernfit:modernfit:1.0.0'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.okhttp3:okhttp:4.9.0'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.4'
 
 
-    annotationProcessor 'com.ygmodesto.modernfit:modernfit-compiler:1.0.0-SNAPSHOT'
+    annotationProcessor 'com.ygmodesto.modernfit:modernfit-processor:1.0.0'
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
