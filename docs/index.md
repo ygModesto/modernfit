@@ -421,7 +421,8 @@ The `CustomType<T> customType` parameter contains all the necessary information 
 
     ``` groovy
     implementation 'com.ygmodesto.modernfit:modernfit:1.0.0'
-    //implementation 'com.ygmodesto.modernfit:volley:1.0.0' if you use volley as client
+    //if you use volley as client
+    //implementation 'com.ygmodesto.modernfit:volley:1.0.0'
     annotationProcessor 'com.ygmodesto.modernfit:modernfit-compiler:1.0.0'
     ```
 
