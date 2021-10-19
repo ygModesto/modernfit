@@ -33,3 +33,8 @@ extra:
   analytics:
     provider: google
     property: UA-176657991-1
+nav:
+  - Overview: index.md
+  - Migrating from Retrofit: migrating.md
+  - IDE Support: ide-support.md
+  - Javadoc: 'https://www.javadoc.io/doc/com.ygmodesto.modernfit/modernfit/latest/index.htmlmkdoc'
