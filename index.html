@@ -1,0 +1,1230 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="migrating/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
+    
+    
+      
+        <title>Modernfit Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.10ba22f1.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","UA-176657991-1"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","UA-176657991-1",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=UA-176657991-1",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Modernfit Docs" class="md-header__button md-logo" aria-label="Modernfit Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Modernfit Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ygModesto/modernfit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Modernfit
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Modernfit Docs" class="md-nav__button md-logo" aria-label="Modernfit Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Modernfit Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ygModesto/modernfit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Modernfit
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Method
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL Manipulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Headers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Headers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurationinterface" class="md-nav__link">
+    <span class="md-ellipsis">
+      ConfigurationInterface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url-dynamically" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL Dynamically
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="URL Dynamically">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      @URL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurationinterface_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ConfigurationInterface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httpinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      HttpInfo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formurlencoded" class="md-nav__link">
+    <span class="md-ellipsis">
+      FormUrlEncoded
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multipart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multipart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP Client
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clientokhttpclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      ClientOkHttp.class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clientvolleyclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      ClientVolley.class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-custom-http-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define Custom HTTP Client
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-custom-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define Custom Converter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="migrating/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migrating from Retrofit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ide-support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IDE Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.javadoc.io/doc/com.ygmodesto.modernfit/modernfit/latest/index.htmlmkdoc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Javadoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Method
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL Manipulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Headers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Headers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurationinterface" class="md-nav__link">
+    <span class="md-ellipsis">
+      ConfigurationInterface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url-dynamically" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL Dynamically
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="URL Dynamically">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      @URL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurationinterface_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ConfigurationInterface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httpinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      HttpInfo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formurlencoded" class="md-nav__link">
+    <span class="md-ellipsis">
+      FormUrlEncoded
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multipart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multipart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP Client
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clientokhttpclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      ClientOkHttp.class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clientvolleyclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      ClientVolley.class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-custom-http-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define Custom HTTP Client
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-custom-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define Custom Converter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Overview</h1>
+
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Define your interface and Modernfit implements it for you.</p>
+<ul>
+<li>At compile time</li>
+<li>Generate readable source code</li>
+<li>Compile-time errors, don't wait to run</li>
+<li>Use OkHttp, Volley, or one defined by you</li>
+<li>Use the converter you want, Jakson, Gson or one defined by you</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Synchronous</label><label for="__tabbed_1_2">Callback</label><label for="__tabbed_1_3">RxJava</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nd">@Modernfit</span><span class="p">(</span>
+<span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://remotehost/api&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">converterFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JacksonConverterFactory</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">SynchronousProductModernfit</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/product/{barcode}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Product</span><span class="w"> </span><span class="nf">getProduct</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">barcode</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nd">@PUT</span><span class="p">(</span><span class="s">&quot;/product/{barcode}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Product</span><span class="w"> </span><span class="nf">updateProduct</span><span class="p">(</span><span class="nd">@Path</span><span class="p">(</span><span class="s">&quot;barcode&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">identifier</span><span class="p">,</span><span class="w"> </span><span class="nd">@Body</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nd">@POST</span><span class="p">(</span><span class="s">&quot;/product/create&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Product</span><span class="w"> </span><span class="nf">createProduct</span><span class="p">(</span><span class="nd">@Body</span><span class="w"> </span><span class="n">Product</span><span class="w"> </span><span class="n">product</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/products&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">listProducts</span><span class="p">();</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/product/{barcode}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">HttpInfo</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getHttpInfoAndProduct</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">barcode</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nd">@Modernfit</span><span class="p">(</span>
+<span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://remotehost/api&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">converterFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JacksonConverterFactory</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">AsyncProductModernfit</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/product/{barcode}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">getProduct</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">barcode</span><span class="p">,</span><span class="w"> </span><span class="n">ResponseCallback</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nd">@PUT</span><span class="p">(</span><span class="s">&quot;/product/{barcode}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">updateProduct</span><span class="p">(</span><span class="nd">@Path</span><span class="p">(</span><span class="s">&quot;barcode&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">identifier</span><span class="p">,</span><span class="w"> </span><span class="nd">@Body</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">ResponseCallback</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nd">@POST</span><span class="p">(</span><span class="s">&quot;/product/create&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">createProduct</span><span class="p">(</span><span class="nd">@Body</span><span class="w"> </span><span class="n">Product</span><span class="w"> </span><span class="n">product</span><span class="p">,</span><span class="w"> </span><span class="n">ResponseCallback</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/products&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">listProducts</span><span class="p">(</span><span class="n">ResponseCallback</span><span class="o">&lt;</span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/product/{barcode}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">getHttpInfoAndProduct</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">barcode</span><span class="p">,</span><span class="w"> </span><span class="n">HttpResponseCallback</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nd">@Modernfit</span><span class="p">(</span>
+<span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://remotehost/api&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">converterFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JacksonConverterFactory</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">RxJava3ProductModernfit</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/product/{barcode}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Single</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getProduct</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">barcode</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nd">@PUT</span><span class="p">(</span><span class="s">&quot;/product/{barcode}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Observable</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">updateProduct</span><span class="p">(</span><span class="nd">@Path</span><span class="p">(</span><span class="s">&quot;barcode&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">identifier</span><span class="p">,</span><span class="w"> </span><span class="nd">@Body</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nd">@POST</span><span class="p">(</span><span class="s">&quot;/product/create&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Observable</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">createProduct</span><span class="p">(</span><span class="nd">@Body</span><span class="w"> </span><span class="n">Product</span><span class="w"> </span><span class="n">product</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/products&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Observable</span><span class="o">&lt;</span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nf">listProducts</span><span class="p">();</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/product/{barcode}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Single</span><span class="o">&lt;</span><span class="n">HttpInfo</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nf">getHttpInfoAndProduct</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">barcode</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">UserModernfit</span><span class="w"> </span><span class="n">userModernfit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UserModernfitImpl</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">build</span><span class="p">();</span>
+</code></pre></div>
+<h2 id="request-method">Request Method<a class="headerlink" href="#request-method" title="Permanent link">&para;</a></h2>
+<p>The methods of the interface must be annotated with <code class="highlight"><span class="nd">@GET</span></code>, <code class="highlight"><span class="nd">@POST</span></code>, <code class="highlight"><span class="nd">@PUT</span></code>, <code class="highlight"><span class="nd">@DELETE</span></code>, <code class="highlight"><span class="nd">@OPTIONS</span></code> or <code class="highlight"><span class="nd">@HEAD</span></code>. This indicates what type of HTTP request they are. With this annotation the relative url is also indicated.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/users&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUsers</span><span class="p">();</span>
+
+
+<span class="w">    </span><span class="nd">@PUT</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/updateUser/{email}&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">User</span><span class="w"> </span><span class="nf">getUsers</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="nd">@Body</span><span class="w"> </span><span class="n">UpdateUserTO</span><span class="w"> </span><span class="n">updateUser</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="url-manipulation">URL Manipulation<a class="headerlink" href="#url-manipulation" title="Permanent link">&para;</a></h2>
+<p>The URL can be modified with variables between <code>{ }</code>, each variable will be replaced by the value of the parameter of the same name annotated with <code class="highlight"><span class="nd">@Path</span></code>, you can put a different parameter name indicating which variable it replaces through the <code class="highlight"><span class="nd">@Path</span><span class="p">(</span><span class="s">&quot;variable&quot;</span><span class="p">)</span></code></p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/user/{id}&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">User</span><span class="w"> </span><span class="nf">getUser</span><span class="p">(</span><span class="nd">@Path</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">userId</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">//equivalente</span>
+<span class="w">    </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/user/{id}&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">User</span><span class="w"> </span><span class="nf">getUser</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+</code></pre></div>
+<p>Query parameters can also be used. As with <code class="highlight"><span class="nd">@Path</span></code> you can use a different name than the parameter with <code class="highlight"><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;variable&quot;</span><span class="p">)</span></code>.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/{enterprise}/users&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUsersByEnterprise</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">enterprise</span><span class="p">,</span><span class="w"> </span><span class="nd">@Query</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">&quot;sort&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">sortValue</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">//equivalente</span>
+<span class="w">    </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/{enterprise}/users&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUsersByEnterprise</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">enterprise</span><span class="p">,</span><span class="w"> </span><span class="nd">@Query</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">sort</span><span class="p">);</span>
+</code></pre></div>
+<p>Or if you prefer you can also pass the Query parameters as a Map with <code class="highlight"><span class="nd">@QueryMap</span></code></p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/{enterprise}/users&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUsersByEnterprise</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">enterprise</span><span class="p">,</span><span class="w"> </span><span class="nd">@QueryMap</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queries</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="headers">Headers<a class="headerlink" href="#headers" title="Permanent link">&para;</a></h2>
+<p>Headers can be included through annotations <code class="highlight"><span class="nd">@Header</span></code>, <code class="highlight"><span class="nd">@Headers</span></code> and <code class="highlight"><span class="nd">@HeaderMap</span></code> or by extending the interface of <code>ConfigurationInterface</code>.</p>
+<h4 id="annotations">Annotations<a class="headerlink" href="#annotations" title="Permanent link">&para;</a></h4>
+<p><code class="highlight"><span class="nd">@Header</span></code>  by default it will use the name of the variable as a key, if you want to change it you can indicate in the annotation <code class="highlight"><span class="nd">@Header</span><span class="p">(</span><span class="s">&quot;key&quot;</span><span class="p">)</span></code>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nd">@Headers</span><span class="p">({</span><span class="s">&quot;Compilation: 987654321&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DeviceType: Android&quot;</span><span class="p">})</span>
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/device&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Configuration</span><span class="w"> </span><span class="nf">headers</span><span class="p">();</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/device&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Configuration</span><span class="w"> </span><span class="nf">headers</span><span class="p">(</span>
+<span class="w">      </span><span class="nd">@Header</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">compilation</span><span class="p">,</span>
+<span class="w">      </span><span class="nd">@Header</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">deviceType</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nd">@Headers</span><span class="p">({</span><span class="s">&quot;header1: value1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;header2: value2&quot;</span><span class="p">})</span>
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/device&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Configuration</span><span class="w"> </span><span class="nf">headersAnyway</span><span class="p">(</span>
+<span class="w">      </span><span class="nd">@Header</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">country</span><span class="p">,</span>
+<span class="w">      </span><span class="nd">@Header</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">deviceUUID</span><span class="p">,</span>
+<span class="w">      </span><span class="nd">@HeaderMap</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">headers</span><span class="p">);</span>
+</code></pre></div></p>
+<h4 id="configurationinterface">ConfigurationInterface<a class="headerlink" href="#configurationinterface" title="Permanent link">&para;</a></h4>
+<p>If we extend the interface of ConfigurationInterfaz we can call the methods to establish and obtain the headers defined for all the methods of the interface.</p>
+<ul>
+<li><code class="highlight"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getHeaders</span><span class="p">();</span></code></li>
+<li><code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="nf">setHeaders</span><span class="p">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">headers</span><span class="p">);</span></code></li>
+</ul>
+<h2 id="url-dynamically">URL Dynamically<a class="headerlink" href="#url-dynamically" title="Permanent link">&para;</a></h2>
+<p>You can change the base url set with <code class="highlight"><span class="nd">@Modernfit</span></code> using <code class="highlight"><span class="nd">@Url</span></code> or by making the interface extend from <code>ConfigurationInterface</code>.</p>
+<h4 id="url">@URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h4>
+<p>The url passed by parameter will cause the base url to be ignored  <code>"https://remotehost/api"</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Modernfit</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://remotehost/api&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">converterFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JacksonConverterFactory</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">UrlEchoResponseRepository</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/echo&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">EchoResponse</span><span class="w"> </span><span class="nf">urlAsParameter</span><span class="p">(</span><span class="nd">@Url</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="configurationinterface_1">ConfigurationInterface<a class="headerlink" href="#configurationinterface_1" title="Permanent link">&para;</a></h4>
+<p>By extending ConfigurationInterface we can call the method <code class="highlight"><span class="kt">void</span><span class="w"> </span><span class="nf">setBaseUrl</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">baseUrl</span><span class="p">);</span></code> to change the base url.</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Modernfit</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;http://remotehost/api&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">converterFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JacksonConverterFactory</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">UrlEchoResponseRepository</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ConfigurationInterface</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/echo&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">EchoResponse</span><span class="w"> </span><span class="nf">urlInInterfaceImpl</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="httpinfo">HttpInfo<a class="headerlink" href="#httpinfo" title="Permanent link">&para;</a></h2>
+<p>You can get information from the HTTP response with the HttpInfo or HttpResponseCallback object in case of using callbacks.
+Lets get the <code>code</code>, <code>headers</code> and <code>body</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Synchronous</label><label for="__tabbed_2_2">Callback</label><label for="__tabbed_2_3">RxJava</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nd">@Modernfit</span><span class="p">(</span>
+<span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://remotehost/api&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">converterFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JacksonConverterFactory</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">SynchronousProductModernfit</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/product/{barcode}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">HttpInfo</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getHttpInfoAndProduct</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">barcode</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nd">@Modernfit</span><span class="p">(</span>
+<span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://remotehost/api&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">converterFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JacksonConverterFactory</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">AsyncProductModernfit</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/product/{barcode}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">getHttpInfoAndProduct</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">barcode</span><span class="p">,</span><span class="w"> </span><span class="n">HttpResponseCallback</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nd">@Modernfit</span><span class="p">(</span>
+<span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://remotehost/api&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">converterFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JacksonConverterFactory</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">RxJava3ProductModernfit</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="nd">@GET</span><span class="p">(</span><span class="s">&quot;/product/{barcode}&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">Observable</span><span class="o">&lt;</span><span class="n">HttpInfo</span><span class="o">&lt;</span><span class="n">Product</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nf">getHttpInfoAndProduct</span><span class="p">(</span><span class="nd">@Path</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="n">barcode</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="formurlencoded">FormUrlEncoded<a class="headerlink" href="#formurlencoded" title="Permanent link">&para;</a></h2>
+<p>If the annotation is used, the <code class="highlight"><span class="nd">@FormUrlEncoded</span></code> HTTP request will be of type <code>"application/x-www-form-urlencoded"</code>. Each key value is defined by the annotation <code class="highlight"><span class="nd">@Field</span></code>, the key is given by the name of the variable or through the annotation field <code class="highlight"><span class="nd">@Field</span><span class="p">(</span><span class="s">&quot;key&quot;</span><span class="p">)</span></code>, the object provides the value.</p>
+<p>Fields can also be provided with an annotated Map with <code class="highlight"><span class="nd">@FieldMap</span></code></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@FormUrlEncoded</span>
+<span class="nd">@POST</span><span class="p">(</span><span class="s">&quot;/user/create&quot;</span><span class="p">)</span>
+<span class="n">User</span><span class="w"> </span><span class="nf">createUser</span><span class="p">(</span><span class="nd">@Field</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="nd">@Field</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">login</span><span class="p">);</span>
+
+<span class="nd">@FormUrlEncoded</span>
+<span class="nd">@POST</span><span class="p">(</span><span class="s">&quot;/user/create&quot;</span><span class="p">)</span>
+<span class="n">User</span><span class="w"> </span><span class="nf">createUser</span><span class="p">(</span><span class="nd">@FieldMap</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">user</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="multipart">Multipart<a class="headerlink" href="#multipart" title="Permanent link">&para;</a></h2>
+<p>If the annotation is used, the <code class="highlight"><span class="nd">@Multipart</span></code> HTTP request will be of type Multipart. Each part is declared using annotation <code class="highlight"><span class="nd">@Part</span></code>.</p>
+<p>You can also include multiple parts at once using a Map and annotation  <code class="highlight"><span class="nd">@PartMap</span></code></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Multipart</span>
+<span class="nd">@POST</span><span class="p">(</span><span class="s">&quot;/user/create&quot;</span><span class="p">)</span>
+<span class="n">User</span><span class="w"> </span><span class="nf">createUser</span><span class="p">(</span><span class="nd">@Part</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="nd">@Part</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">entry</span><span class="p">);</span>
+
+<span class="nd">@Multipart</span>
+<span class="nd">@POST</span><span class="p">(</span><span class="s">&quot;/users/createHeavy&quot;</span><span class="p">)</span>
+<span class="n">Collection</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">createUsers</span><span class="p">(</span><span class="nd">@PartMap</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">users</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="http-client">HTTP Client<a class="headerlink" href="#http-client" title="Permanent link">&para;</a></h2>
+<p>You can use the clients already defined by Modernfit or if you prefer define a <a href="#define-custom-http-client">custom client http</a> . The client to use is defined in the client field of the annotation <code class="highlight"><span class="nd">@Modernfit</span></code>.</p>
+<ul>
+<li><a href="https://github.com/ygModesto/modernfit/blob/main/modernfit/src/main/java/com/ygmodesto/modernfit/services/ClientOkHttp.java" target="_blank">ClientOkHttp.class</a> to use <a href="https://square.github.io/okhttp/" target="_blank">OkHttp</a></li>
+<li><a href="https://github.com/ygModesto/modernfit/blob/main/android/volley/src/main/java/com/ygmodesto/modernfit/volley/ClientVolley.java" target="_blank">ClientVolley.class</a> to use <a href="https://developer.android.com/training/volley" target="_blank">Volley</a> (Only for Android).</li>
+</ul>
+<h4 id="clientokhttpclass">ClientOkHttp.class<a class="headerlink" href="#clientokhttpclass" title="Permanent link">&para;</a></h4>
+<p>For HTTP requests it uses the <a href="https://square.github.io/okhttp/" target="_blank">OkHttp</a> library. This library needs the <a href="https://github.com/square/okhttp/blob/master/okhttp/src/main/kotlin/okhttp3/OkHttpClient.kt" target="_blank">OkHttpClient</a> object that if you don't provide one to Modernfit it will generate one when building the interface implementation.</p>
+<p>If you want to contribute an OkHttpClient object, it must be done when calling the constructor of the interface implementation. If we assume that the interface is called PongRepository.</p>
+<div class="highlight"><pre><span></span><code><span class="n">OkHttpClient</span><span class="w"> </span><span class="n">okHttpClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OkHttpClient</span><span class="p">();</span>
+<span class="n">PongRepositoryImpl</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="na">addHttpClient</span><span class="p">(</span><span class="n">ClientOkHttp</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">okHttpClient</span><span class="p">))</span>
+<span class="w">                </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+</code></pre></div>
+<h4 id="clientvolleyclass">ClientVolley.class<a class="headerlink" href="#clientvolleyclass" title="Permanent link">&para;</a></h4>
+<p>For HTTP requests it uses the <a href="https://developer.android.com/training/volley" target="_blank">Volley</a> library. This library needs the <a href="https://github.com/google/volley/blob/master/core/src/main/java/com/android/volley/RequestQueue.java" target="_blank">RequestQueue</a> object that if you don't provide one to Modernfit it will generate one when building the interface implementation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To use Volley if the RequestQueue object is not passed, the Context must be passed through the following call:</p>
+<p><code class="highlight"><span class="n">AndroidModernfitContext</span><span class="p">.</span><span class="na">setContext</span><span class="p">(</span><span class="n">context</span><span class="p">);</span></code></p>
+</div>
+<p>If you want to provide a RequestQueue object, it must be done when calling the interface implementation constructor. If we assume that the interface is called PongRepository.</p>
+<div class="highlight"><pre><span></span><code><span class="n">RequestQueue</span><span class="w"> </span><span class="n">requestQueue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Volley</span><span class="p">.</span><span class="na">newRequestQueue</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="n">PongRepositoryImpl</span><span class="p">.</span><span class="na">builder</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="na">addHttpClient</span><span class="p">(</span><span class="n">ClientVolley</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">requestQueue</span><span class="p">))</span>
+<span class="w">                </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+</code></pre></div>
+<p>To use volley it is necessary to add the dependency with the Modernfit Volley module.</p>
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.ygmodesto.modernfit:volley:1.0.0&#39;</span>
+</code></pre></div>
+<h2 id="define-custom-http-client">Define Custom HTTP Client<a class="headerlink" href="#define-custom-http-client" title="Permanent link">&para;</a></h2>
+<p>To define an HTTP Client to use with Modernfit we must create a class that meets 2 requirements:</p>
+<ul>
+<li>It must have a static method <code class="highlight"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ClientCustom</span><span class="w"> </span><span class="nf">create</span><span class="p">();</span></code></li>
+<li>You must implement the <code>HttpClient</code> interface</li>
+</ul>
+<p>Once we have our ClientCustom we can use it in the annotation <code class="highlight"><span class="nd">@Modernfit</span></code>.
+<div class="highlight"><pre><span></span><code><span class="nd">@Modernfit</span><span class="p">(</span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ClientCustom</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">PongRepository</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>Here is the skeleton of an example:
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ClientCustom</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">HttpClient</span><span class="w"> </span><span class="p">{</span>
+
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">ClientCustom</span><span class="w"> </span><span class="nf">create</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//Creation of everything you need</span>
+<span class="w">  </span><span class="p">}</span>
+
+
+<span class="w">  </span><span class="nd">@Override</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">ResponseContent</span><span class="w"> </span><span class="nf">callMethod</span><span class="p">(</span><span class="n">RequestInfo</span><span class="w"> </span><span class="n">requestInfo</span><span class="p">,</span><span class="w"> </span><span class="n">DiscreteBody</span><span class="w"> </span><span class="n">body</span><span class="p">)</span>
+<span class="w">      </span><span class="kd">throws</span><span class="w"> </span><span class="n">ModernfitException</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">//code for http request </span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nd">@Override</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">callMethod</span><span class="p">(</span><span class="n">RequestInfo</span><span class="w"> </span><span class="n">requestInfo</span><span class="p">,</span><span class="w"> </span><span class="n">DiscreteBody</span><span class="w"> </span><span class="n">body</span><span class="p">,</span>
+<span class="w">      </span><span class="n">ResponseCallback</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ModernfitException</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">//code for http request using callback</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nd">@Override</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">ResponseContent</span><span class="w"> </span><span class="nf">callMethod</span><span class="p">(</span><span class="n">RequestInfo</span><span class="w"> </span><span class="n">requestInfo</span><span class="p">,</span><span class="w"> </span><span class="n">MultipartBody</span><span class="w"> </span><span class="n">body</span><span class="p">)</span>
+<span class="w">      </span><span class="kd">throws</span><span class="w"> </span><span class="n">ModernfitException</span><span class="w"> </span><span class="p">{</span>
+
+
+<span class="w">    </span><span class="c1">//code for http multipart request </span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nd">@Override</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">callMethod</span><span class="p">(</span><span class="n">RequestInfo</span><span class="w"> </span><span class="n">requestInfo</span><span class="p">,</span><span class="w"> </span><span class="n">MultipartBody</span><span class="w"> </span><span class="n">body</span><span class="p">,</span>
+<span class="w">      </span><span class="n">ResponseCallback</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ModernfitException</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">//code for http multipart request using callback</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="define-custom-converter">Define Custom Converter<a class="headerlink" href="#define-custom-converter" title="Permanent link">&para;</a></h2>
+<p>To define a Converter to use with Modernfit we must create a class that meets 2 requirements:</p>
+<ul>
+<li>It must have a static method <code class="highlight"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">CustomConverterFactory</span><span class="w"> </span><span class="nf">create</span><span class="p">();</span></code></li>
+<li>You must implement the <code>Converter.Factory</code> interface</li>
+</ul>
+<p>Converter.Factory forces to implement 3 methods. These methods should return a Converter.</p>
+<ul>
+<li><code class="highlight"><span class="kd">public</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Converter</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">BodyContent</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getRequestConverter</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">zombie</span><span class="p">,</span><span class="w"> </span><span class="n">CustomType</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">customType</span><span class="p">);</span></code> This Coverter will be used to convert the Object annotated with <code class="highlight"><span class="nd">@Body</span></code> of type T.</li>
+<li><code class="highlight"><span class="kd">public</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Converter</span><span class="o">&lt;</span><span class="n">ResponseContent</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getResponseConverter</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">zombie</span><span class="p">,</span><span class="w"> </span><span class="n">CustomType</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">customType</span><span class="p">);</span></code> This Converter will be used to convert the response of the HTTP request to the object to be returned.</li>
+<li><code class="highlight"><span class="kd">public</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Converter</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUrlConverter</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">zombie</span><span class="p">,</span><span class="w"> </span><span class="n">CustomType</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">customType</span><span class="p">);</span></code> This Converter will be used to convert the parameters noted with <code class="highlight"><span class="nd">@Path</span></code>, <code class="highlight"><span class="nd">@Query</span></code> and <code class="highlight"><span class="nd">@QueryMap</span></code> to convert them to URL.</li>
+</ul>
+<p>Here is the skeleton of an example:
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CustomConverterFactory</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BaseConverterFactory</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Converter</span><span class="p">.</span><span class="na">Factory</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">CustomConverterFactory</span><span class="w"> </span><span class="nf">create</span><span class="p">(){</span>
+<span class="w">    </span><span class="c1">//Creation of everything you need</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nd">@Override</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Converter</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">BodyContent</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getRequestConverter</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">zombie</span><span class="p">,</span><span class="w"> </span><span class="n">CustomType</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">customType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//code to create the converter</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nd">@Override</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Converter</span><span class="o">&lt;</span><span class="n">ResponseContent</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getResponseConverter</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">zombie</span><span class="p">,</span>
+<span class="w">      </span><span class="n">CustomType</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">customType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//code to create the converter</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nd">@Override</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Converter</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getUrlConverter</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">zombie</span><span class="p">,</span><span class="w"> </span><span class="n">CustomType</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">customType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//code to create the converter</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></p>
+<p>The <code>CustomType&lt;T&gt; customType</code> parameter contains all the necessary information that the main Converters libraries need. The parameter <code>T zombie</code> has been added to be able to do Method Overloading, this parameter will only receive an object of that type set to null. Thanks to Method Overloading we can generate specific converters for certain types of data, for example, the BaseConverterFactory class from which the previous example extends is responsible for generating all Converters for cases in which the response or request are scalars (integers, floats, a raw string instead of the JSON expected by Jackson or Gson for example).</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">gradle</label><label for="__tabbed_3_2">maven</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.ygmodesto.modernfit:modernfit:1.0.0&#39;</span>
+<span class="c1">//if you use volley as client</span>
+<span class="c1">//implementation &#39;com.ygmodesto.modernfit:volley:1.0.0&#39;</span>
+<span class="n">annotationProcessor</span><span class="w"> </span><span class="s1">&#39;com.ygmodesto.modernfit:modernfit-compiler:1.0.0&#39;</span>
+</code></pre></div>
+<p>Remember to add the dependencies of the client and the converter that you are going to use, if for example you are going to use OkHttp and Gson you need to add the dependencies of the library.</p>
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.squareup.okhttp3:okhttp:VERSION&#39;</span>
+<span class="n">annotationProcessor</span><span class="w"> </span><span class="s1">&#39;com.google.code.gson:gson:VERSION&#39;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">&lt;properties&gt;</span>
+<span class="w">    </span><span class="nt">&lt;java.version&gt;</span>1.8<span class="nt">&lt;/java.version&gt;</span><span class="w"> </span><span class="cm">&lt;!-- depending on your project --&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modernfit.version&gt;</span>1.0.0<span class="nt">&lt;/modernfit.version&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/properties&gt;</span>
+<span class="w">    </span>...
+<span class="w">  </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.ygmodesto.modernfit<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>modernfit<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>${modernfit.version}<span class="nt">&lt;/version&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/dependency&gt;</span>
+<span class="w">  </span>...
+<span class="w">  </span><span class="nt">&lt;build&gt;</span>
+<span class="w">    </span><span class="nt">&lt;plugins&gt;</span>
+<span class="w">      </span><span class="nt">&lt;plugin&gt;</span>
+<span class="w">        </span><span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">        </span><span class="nt">&lt;version&gt;</span>3.8.1<span class="nt">&lt;/version&gt;</span><span class="w"> </span><span class="cm">&lt;!-- depending on your project --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;configuration&gt;</span>
+<span class="w">          </span><span class="nt">&lt;source&gt;</span>${java.version}<span class="nt">&lt;/source&gt;</span>
+<span class="w">          </span><span class="nt">&lt;target&gt;</span>${java.version}<span class="nt">&lt;/target&gt;</span>
+<span class="w">          </span><span class="nt">&lt;annotationProcessorPaths&gt;</span>
+<span class="w">            </span><span class="nt">&lt;path&gt;</span>
+<span class="w">              </span><span class="nt">&lt;groupId&gt;</span>com.ygmodesto.modernfit<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">              </span><span class="nt">&lt;artifactId&gt;</span>modernfit-processor<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">              </span><span class="nt">&lt;version&gt;</span>${modernfit.version}<span class="nt">&lt;/version&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/path&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/annotationProcessorPaths&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/configuration&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/plugin&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/plugins&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/build&gt;</span>
+</code></pre></div>
+Remember to add the dependencies of the client and the converter that you are going to use, if for example you are going to use OkHttp and Gson you need to add the dependencies of the library.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.squareup.okhttp3<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>okhttp<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>${okhttp.version}<span class="nt">&lt;/version&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.google.code.gson<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>gson<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>${gson.version}<span class="nt">&lt;/version&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+    
+  </body>
+</html>
